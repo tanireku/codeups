@@ -1,0 +1,43 @@
+.p-about {
+  background-image: url(./../img/common/top-about.jpg);
+  background-size: cover;
+  background-position: center;
+  position: relative;
+  z-index: -1;
+}
+
+.p-about::after {
+  position: absolute;
+  content: "";
+  width: 100%;
+  height: 100%;
+  background-color: rgba($color: #000000, $alpha: 0.16);
+  top: 0;
+  left: 0;
+  z-index: -2;
+}
+
+
+.p-about__inner {
+  padding-top: rem(50);
+  padding-bottom: rem(50);
+}
+
+.p-about__content {
+  background: rgba($color: #ffffff, $alpha: 0.95);
+  padding: rem(50) rem(15) rem(50) rem(30);
+}
+
+.p-about__box {
+  margin-top: rem(30);
+}
+
+.p-about__text {
+  line-height: 2;
+  font-size: rem(14);
+}
+
+.p-about__btn {
+  margin-top: rem(30);
+  text-transform: uppercase;
+}

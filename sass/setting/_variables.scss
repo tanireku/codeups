@@ -6,7 +6,8 @@ $text-color: #333; // テキスト色
 $opacity: 0.7; // 透過度
 
 // フォント
-$font-family-base: "";// ベースフォント
+$font-family-base: 'Noto Sans JP', sans-serif;// ベースフォント
+$font-family-sub: 'Montserrat', sans-serif;//サブフォント
 $font-size-base: 16px; // ベースフォントサイズ
 $font-weight-base: 400; // ベースフォントウェイト
 $lh: 1.6; // ベース行間
@@ -31,4 +32,4 @@ $breakpoints: (
 
 
 $padding-pc: 25px; // タブレット時の余白
-$padding-sp: 20px; // スマホ時の余白
+$padding-sp: 15px; // スマホ時の余白

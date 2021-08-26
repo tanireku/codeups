@@ -4,6 +4,8 @@ jQuery(window).on("load", function() {
 	jQuery("body").attr("data-loading", "true");
 });
 
+
+
 jQuery(function() {
 	// スクロール判定
 	jQuery(window).on("scroll", function() {
@@ -13,6 +15,24 @@ jQuery(function() {
 			jQuery("body").attr("data-scroll", "false");
 		}
 	});
+
+
+	/* ドロワーメニュー */
+	jQuery('.js-hamburger').on('click', function(e) {
+		e.preventDefault();
+		jQuery('.c-hamburger').toggleClass('open');
+		return false;
+	});
+
+	$('.js-hamburger').on('click', function () {
+		if ($('.js-hamburger').hasClass('open')) {
+			$('.js-drawer-menu').fadeIn();
+			$('.js-overlay').fadeIn();
+		} else {
+			$('.js-drawer-menu').fadeOut();
+			$('.js-overlay').fadeOut();
+		}
+	})
 
 	/* ドロワー */
 	jQuery(".js-drawer").on("click", function(e) {

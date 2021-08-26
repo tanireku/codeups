@@ -6,9 +6,14 @@
 		color: green;
 	}
 	@include mq(pc) {
-		color: blue;
+		color: orange;
 	}
 	@include mq(lg) {
 		color: brown;
 	}
+}
+
+.test {
+	color: orange;
+	font-size: rem(20);
 }
