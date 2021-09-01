@@ -19,8 +19,9 @@
   font-weight: 700;
   letter-spacing: 0.068em;
   line-height: (20 / 12);
+
+  @include mq (tab) {
+    font-size: rem(14);
+  }
 }
 
-.p-topics__btn {
-  margin-top: rem(30);
-}

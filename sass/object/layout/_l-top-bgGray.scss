@@ -2,4 +2,23 @@
   background-color: #F0F0F0;
   padding-top: rem(40);
   padding-bottom: rem(40);
+  position: relative;
+  z-index: -10;
+
+  @include mq (tab) {
+    padding-top: rem(180);
+    padding-bottom: rem(60);
+    margin-top: rem(-100);
+  }
+}
+
+.l-top-bgGray__inner {
+  max-width: rem(1100);
+  padding: 0 rem(20);
+  margin-right: auto;
+  margin-left: auto;
+
+  @include mq (tab) {
+    display: flex;
+  }
 }

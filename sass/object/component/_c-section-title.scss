@@ -5,4 +5,8 @@
   letter-spacing: 0.068em;
   line-height: 1;
   text-transform: uppercase;
+
+  @include mq (tab) {
+    font-size: rem(32);
+  }
 }

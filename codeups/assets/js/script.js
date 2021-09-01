@@ -34,6 +34,15 @@ jQuery(function() {
 		}
 	})
 
+	$('.js-overlay').on('click', function () {
+		if ($('.js-hamburger').removeClass('open')) {
+			$('.js-drawer-menu').fadeOut();
+			$('.js-overlay').fadeOut();
+		} 
+	})
+
+
+
 	/* ドロワー */
 	jQuery(".js-drawer").on("click", function(e) {
 		e.preventDefault();
@@ -73,5 +82,19 @@ jQuery(function() {
 				e.preventDefault();
 			});
 	}
+
+	let header = $('.js-top-header');
+	let headerHeight = $('.js-top-header').outerHeight();
+	let imgHeight = $('.js-mv').outerHeight() - headerHeight;
+	let top = $(window).scrollTop();
+
+	$(window).on('load scroll', function() {
+		if (top < imgHeight) {
+			$('.p-header__logo svg path').css('fill', '#fff');
+		} else {
+			$('.p-header__logo svg path').css('fill', '#333');
+		}
+	});
+
 });
 });
