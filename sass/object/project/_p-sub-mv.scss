@@ -1,24 +1,28 @@
-.p-mv {
+.p-sub-mv {
 	position: relative;
-	height: 100vh;
+	height: rem(449);
 	z-index: -100;
 }
 
-.p-mv::after {
+.p-sub-mv::after {
 	position: absolute;
 	content: "";
-	height: 100vh;
-	width: 75.5%;
+	height: rem(449);
+	width: 54%;
 	background: #222;
 	top: 0;
 	right: 0;
 	z-index: -10;
+
+	@include mq (tab) {
+		height: rem(464);
+	}
 }
 
-.p-mv__img {
+.p-sub-mv__img {
 	position: absolute;
 	content: "";
-	height: 87vh;
+	height: rem(387);
 	width: 76.5%;
 	object-fit: cover;
 	object-position: top;
@@ -27,7 +31,7 @@
 	z-index: -9;
 }
 
-.p-mv__img::before {
+.p-sub-mv__img::before {
 	position: absolute;
 	content: "";
 	height: 100%;
@@ -37,14 +41,14 @@
 	left: 0;
 }
 
-.p-mv__img img {
+.p-sub-mv__img img {
 	width: 100%;
 	height: 100%;
 	object-fit: cover;
 	object-position: top;
 }
 
-.p-mv__block {
+.p-sub-mv__block {
 	color: #fff;
 	position: absolute;
 	top: 50%;
@@ -59,35 +63,24 @@
 
 }
 
-.p-mv__subtitle {
+.p-sub-mv__subtitle {
 	display: block;
 	font-size: rem(16);
 	letter-spacing: 0.063em;
 	font-weight: 400;
+  margin-top: rem(10);
 	@include mq(tab) {
 		font-size: rem(20);
 	}
 }
 
-.p-mv__subtitle--en {
-	display: block;
-	font-size: rem(16);
-	letter-spacing: 0.063em;
-	font-weight: bold;
-	font-family: $font-family-sub;
-	margin-top: rem(5);
-	@include mq(tab) {
-		font-size: rem(20);
-	}
-}
 
-.p-mv__title {
+.p-sub-mv__title {
 	font-size: rem(56);
 	font-weight: 800;
 	letter-spacing: 0.063em;
 	font-family: $font-family-sub;
 	line-height: (53 / 56);
-	margin-top: rem(10);
 	@include mq(tab) {
 		font-size: rem(72);
 	}

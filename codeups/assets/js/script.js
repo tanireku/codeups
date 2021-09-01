@@ -52,8 +52,8 @@ jQuery(function() {
 	});
 
 	/* スムーススクロール */
-	jQuery('a[href^="#"]').click(function() {
-		let header = jQuery(".js-header").height();
+	jQuery('a[href^="#"]').click(function () {
+		let header = jQuery(".js-top-header").height();
 		let speed = 300;
 		let id = jQuery(this).attr("href");
 		let target = jQuery("#" == id ? "html" : id);
@@ -83,18 +83,42 @@ jQuery(function() {
 			});
 	}
 
-	let header = $('.js-top-header');
-	let headerHeight = $('.js-top-header').outerHeight();
-	let imgHeight = $('.js-mv').outerHeight() - headerHeight;
-	let top = $(window).scrollTop();
+	 //メインヴィジュアルを過ぎたら色が変わる
+	 var headerHeight = $('.js-top-header').height();
+	 var mvh = $('.js-top-mv').height(); //メインヴィジュアルの高さを取得
+	 var gapHeight = mvh - headerHeight
 
-	$(window).on('load scroll', function() {
-		if (top < imgHeight) {
-			$('.p-header__logo svg path').css('fill', '#fff');
-		} else {
-			$('.p-header__logo svg path').css('fill', '#333');
-		}
-	});
+	 var subheaderHeight = $('.js-sub-header').height();
+	 var mvhSub = $('.js-sub-mv').height(); //メインヴィジュアルの高さを取得
+	 var gapHeightSub = mvhSub - subheaderHeight
+
+
+	 //ヘッダーロゴの色を変える
+	 $(window).on('load scroll', function() {
+		 
+		 var top = $(window).scrollTop();
+	 
+		 if (gapHeight > top) {
+			 $('.js-header__logo svg path').css('fill', '#fff');
+			 $('.js-hamburger span').css('background', '#fff');
+			 $('.js-header__menuText').css('color', '#fff');
+		 } else {
+			 $('.js-header__logo svg path').css('fill', '#333');
+			 $('.js-hamburger span').css('background', '#333');
+			 $('.js-header__menuText').css('color', '#333');
+		 }
+
+		 if (gapHeightSub > top) {
+			$('.js-header__logo svg path').css('fill', '#fff');
+			$('.js-hamburger span').css('background', '#fff');
+			$('.js-header__menuText').css('color', '#fff');
+		 } else {
+			$('.js-header__logo svg path').css('fill', '#333');
+			$('.js-hamburger span').css('background', '#333');
+			$('.js-header__menuText').css('color', '#333');
+		 }
+
+	 });
 
 });
 });

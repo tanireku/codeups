@@ -1,7 +1,7 @@
 <?php get_header(); ?>
 
 <!-- mv -->
-<div class="l-mv p-mv">
+<div class="l-mv p-mv js-top-mv">
   <picture class="p-mv__img">
     <source srcset="<?php echo get_template_directory_uri(); ?>/assets/img/common/img_top-pc.jpg" media="(min-width: 768px)">
     <img src="<?php echo get_template_directory_uri(); ?>/assets/img/common/img_top-sp.jpg" alt="">
