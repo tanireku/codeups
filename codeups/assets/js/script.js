@@ -83,42 +83,50 @@ jQuery(function() {
 			});
 	}
 
-	 //メインヴィジュアルを過ぎたら色が変わる
-	 var headerHeight = $('.js-top-header').height();
-	 var mvh = $('.js-top-mv').height(); //メインヴィジュアルの高さを取得
-	 var gapHeight = mvh - headerHeight
-
-	 var subheaderHeight = $('.js-sub-header').height();
-	 var mvhSub = $('.js-sub-mv').height(); //メインヴィジュアルの高さを取得
-	 var gapHeightSub = mvhSub - subheaderHeight
-
-
-	 //ヘッダーロゴの色を変える
-	 $(window).on('load scroll', function() {
-		 
-		 var top = $(window).scrollTop();
 	 
-		 if (gapHeight > top) {
-			 $('.js-header__logo svg path').css('fill', '#fff');
-			 $('.js-hamburger span').css('background', '#fff');
-			 $('.js-header__menuText').css('color', '#fff');
-		 } else {
-			 $('.js-header__logo svg path').css('fill', '#333');
-			 $('.js-hamburger span').css('background', '#333');
-			 $('.js-header__menuText').css('color', '#333');
-		 }
 
-		 if (gapHeightSub > top) {
+
+
+	//メインヴィジュアルを過ぎたら色が変わる
+	let headerHeight = $('.js-top-header').height();
+	let mvh = $('.js-top-mv').height(); //メインヴィジュアルの高さを取得
+	var gapHeight = mvh - headerHeight
+	
+	let subheaderHeight = $('.js-sub-header').height();
+	let mvhSub = $('.js-sub-mv').height(); //メインヴィジュアルの高さを取得
+	var gapHeightSub = mvhSub - subheaderHeight
+	
+		//ヘッダーロゴの色を変える
+	$(window).on('load scroll', function() {
+		
+		var top = $(window).scrollTop();
+	
+
+		if (gapHeight > top) {
 			$('.js-header__logo svg path').css('fill', '#fff');
-			$('.js-hamburger span').css('background', '#fff');
-			$('.js-header__menuText').css('color', '#fff');
-		 } else {
-			$('.js-header__logo svg path').css('fill', '#333');
-			$('.js-hamburger span').css('background', '#333');
-			$('.js-header__menuText').css('color', '#333');
-		 }
+		 $('.js-hamburger span').css('background', '#fff');
+		 $('.js-header__menuText').css('color', '#fff');
+		} else {
+		 $('.js-header__logo svg path').css('fill', '#333');
+		 $('.js-hamburger span').css('background', '#333');
+		 $('.js-header__menuText').css('color', '#333');
+		}
 
-	 });
 
+		if (gapHeightSub > top) {
+			$('.js-header__logo svg path').css('fill', '#fff');
+		 $('.js-hamburger span').css('background', '#fff');
+		 $('.js-header__menuText').css('color', '#fff');
+		} 
+
+	});
+
+
+	
+
+
+	});
 });
-});
+
+
+
